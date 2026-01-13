@@ -1,0 +1,1 @@
+Prvočísla v rozsahu 4 jsou: [2, 3]
