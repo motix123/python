@@ -1,3 +1,4 @@
+#toto je fce na fibonacci sequence
 def fibonacci(n):
     if n == 0 or n == 1:
         return 1
@@ -5,5 +6,5 @@ def fibonacci(n):
     return fibonacci(n-1) + fibonacci(n-2)
 
 
-vysledek = fibonacci(8)
-print(vysledek)
+answer = fibonacci(8)
+print(answer)
