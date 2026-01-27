@@ -10,7 +10,7 @@ with open('ukazkovy.txt', "r") as s:
 
 
 
-def sito(n):
+def sieve(n):
     n = n + 1
     if n <= 1:
         return []
@@ -25,7 +25,7 @@ def sito(n):
     primes = [i for i in range(n) if is_prime[i]]
     return primes
 n = int(input("Zadej číslo n:"))
-primes = sito(n)
+primes = sieve(n)
 
 with open('primes.txt', 'w', encoding="utf-8") as soubor:
     soubor.write("Prvočísla v rozsahu " + str(n) + " jsou: " + str(primes))

@@ -1,5 +1,5 @@
 #počítání minima a maxima ze seznamu tří čísel
-a = int(input("Enter first number: "))
+"""a = int(input("Enter first number: "))
 b = int(input("Enter second  number: "))
 c = int(input("Enter third number: "))
 if a>b and a>c:
@@ -21,11 +21,11 @@ elif c>a and c>b:
     else:
         print("The smallest number is:",b)
 else:
-    print("All the numbers are same:",a)
+    print("All the numbers are same:",a)"""
 
 
 # linearni rovnice jako funkce
-
+"""
 def linear_fce(y, z):
 
     if y == 0 and z == 0:
@@ -35,11 +35,11 @@ def linear_fce(y, z):
         return "equation has no solutions"
 
     fce = -z / y
-    return fce
+    return fce"""
 
 
 # řešení rovnice ax^2 + bx + c = 0 neboli kvadratické rovnice
-
+"""
 a = int(input("Enter first number: "))
 b = int(input("Enter second number: "))
 c = int(input("Enter third number: "))
@@ -73,11 +73,11 @@ elif b == 0:
 elif c == 0:
     x1 = 0
     x2 = -b / a
-    print("The equation has two distinct solutions x1 =", x1, "a x2 =", x2)
+    print("The equation has two distinct solutions x1 =", x1, "a x2 =", x2)"""
 
 
 # kvadraticka rovnice jako funkce
-
+"""
     def quadratic_formula(k, l, m):
 
         if k == 0:
@@ -94,12 +94,12 @@ elif c == 0:
         answer_1 = (-l + D ** 0.5) / (2 * k)
         answer_2 = (-l - D ** 0.5) / (2 * k)
 
-        return [answer_1, answer_2]
+        return [answer_1, answer_2]"""
 
 
 # euklidovský algoritmus pro výpočet největšího společného dělitele (NSD)
 
-a = int(input("Enter first number: "))
+"""a = int(input("Enter first number: "))
 b = int(input("Enter second number: "))
 if a > b:
     while b != 0:
@@ -118,13 +118,13 @@ else:
 def Euclidian_algorithms(a, b):
     while b:
         a, b = b, a % b
-    return a
+    return a"""
 
 
 
 # eratosthénovo síto složí k nalezení všech prvočísel menších než zadané číslo n jako funkce
 
-def sieve(n):
+"""def sieve(n):
     #Funkce vrátí seznam všech prvočísel menších než n pomocí Eratosthénova síta.
     n = n + 1
 
@@ -143,18 +143,18 @@ def sieve(n):
 
 # Sestavení seznamu prvočísel
     primes = [i for i in range(n) if is_prime[i]]
-    return primes
+    return primes"""
 
 
 # eratosthénovo síto jako skript
 
-n = int(input("Enter number n:"))
+"""n = int(input("Enter number n:"))
 primes = sieve(n)
-print("Prime numbers in the range ", n, "are:", primes)
+print("Prime numbers in the range ", n, "are:", primes)"""
 
 
 # toto je fce na fibonacci sequence
-def fibonacci(n):
+"""def fibonacci(n):
     if n == 0 or n == 1:
         return 1
 
@@ -162,22 +162,48 @@ def fibonacci(n):
 
 
 answer = fibonacci(8)
-print(answer)
+print(answer)"""
 
 
 # factorial recursive
 
-def factorial_rec(n):
+"""def factorial_rec(n):
     if n == 0:
         return 1
-    return n * factorial_rec(n - 1)
+    return n * factorial_rec(n - 1)"""
 
 
 # factorial
 
-def factorial(n):
+"""def factorial(n):
     answer =1
     for num in range(n, n + 1):
         answer = answer * num
-    return answer
+    return answer"""
+
+# class/oop
+
+class Car:
+  def __init__ (self, x, y, name):
+    self.position = [x,y]
+    self.hp = 0
+    self.name = name
+
+  def __str__(self):
+    return "Car {} with hp at {} in position {}".format(self.name, self.hp, self.position)
+
+car1 = Car(0,0,"Lotus")
+car2 = Car(10,20,"Audi")
+car3 = Car(300,400,"Ferrari")
+
+car3 = Car(10,400,"Ferrari")
+for i in range(5):
+  print(car3)
+  car3.drive_left()
+
+print("Car at the end:", car3)
+
+
+
+
 
