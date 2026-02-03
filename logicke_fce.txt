@@ -172,5 +172,8 @@ __________________Funkce python__________________
 # - je automaticky volána při vytváření instance třídy
 
 
-
+"""OOP"""
+# - slouží k vytvoření objektů, které mají své vlastnosti a metody
+# - třída je jako šablona pro vytvoření objektů
+# - objekt je instance třídy
 
