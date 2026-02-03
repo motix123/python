@@ -181,29 +181,23 @@ print(answer)"""
         answer = answer * num
     return answer"""
 
-# class/oop
+class Zeton:
+  def __init__(self,value):
+    self.__value = value
 
-class Car:
-  def __init__ (self, x, y, name):
-    self.position = [x,y]
-    self.hp = 0
-    self.name = name
-
-  def __str__(self):
-    return "Car {} with hp at {} in position {}".format(self.name, self.hp, self.position)
-
-car1 = Car(0,0,"Lotus")
-car2 = Car(10,20,"Audi")
-car3 = Car(300,400,"Ferrari")
-
-car3 = Car(10,400,"Ferrari")
-for i in range(5):
-  print(car3)
-  car3.drive_left()
-
-print("Car at the end:", car3)
-
-
-
-
-
+try:
+  Z1 = Zeton(10)
+  expected_var = "value"
+  all_vars = dir(Z1)
+  if "_Zeton__"+expected_var in all_vars:
+    print("Is OK")
+  elif expected_var in all_vars:
+    print(expected_var, "no hidden atribut")
+  elif "_"+expected_var in all_vars:
+    print("_"+expected_var, "no hidden atribut")
+  else:
+    print(expected_var, "Error 404")
+except NameError as e:
+  print("Class Zeton not found")
+except TypeError as e:
+  print("Class Zeton should receive one argument while creating  ")
