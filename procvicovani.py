@@ -201,77 +201,7 @@ print("Auto1: x:", car1.position[0],",y:", car1.position[0], ",hp:", car1.hp, ",
 print("Auto2: x:", car2.position[0],",y:", car2.position[0], ",hp:", car2.hp, ",brand:", car2.name)
 print("Auto3: x:", car3.position[0],",y:", car3.position[0], ",hp:", car3.hp, ",brand:", car3.name)"""
 
-# Ošetření v konstruktoru
-"""class Hrac:
-  def __init__(self, x, y, nazev):
-    self.x = max(x,0) # max(x,0) is the same as: 0 if x < 0 else x
-    self.y = max(y,0)
-    self.nazev = nazev
 
-  def __str__(self):
-    return "Player {} is on x:{} y:{} coordinates".format(self.nazev, self.x, self.y)
-
-H1 = Hrac(5, -15, "Motix")
-print(H1)
-H1.x -= 25
-print(H1)
-
-#zakrytí atributu
-class Ukazkova:
-  def __init__(self, x, y, z):
-    self.x = x
-    self._y = y
-    self.__z = z
-
-  def __str__(self): # uvnitř třídy můžeme všechny atributy používat normálně
-    return "Ukazkové hodnoty x:{} _y:{} __z:{} ".format(self.x, self._y, self.__z)
-
-U1 = Ukazkova(5, 10, 15)
-print(U1)
-
-# Mimo třídu ale můžeme přistupovat pouze k veřejným atributům
-print("x:",U1.x)
-print("y:",U1._y)
-print("z:",U1.__z)
-
-# Setter
-# x, y, nazev nejsou ve skutečnosti atributy,
-#             jsou to funkce @property (při čtení) a .setter (při zápisu)
-#             které pracují se "speciálními" atributy _x, _y, _nazev
-class Player:
-  def __init__(self, value_x, value_y, name):
-    self.x = value_x # tady už se zavolá setter pro x
-    self.y = value_y
-    self.nazev = name
-  
-  @property # co se má stát, pokud budeme číst x (název funkce)
-  def x(self):
-    return self._x
-
-  @x.setter # co se má stát, pokud budem vkládat hodnotu do x (název funkce)
-  def x(self, value):
-    self._x = max(value, 0) # max(x,0) je fakticky stejné, jako: 0 if x < 0 else x
-
-  @property
-  def y(self):
-    return self.__y
-
-  @y.setter
-  def y(self, value):
-    self.__y = max(value, 0)
-
-  @property
-  def name(self):
-    print("Čtu název hráče")
-    return self._name
-
-  @nazev.setter
-  def nazev(self, value):
-    print("Zapisuji název hráče")
-    self._name = value
-
-  def __str__(self):
-    return "Player {} is on x:{} y:{} coordanites".format(self.name, self.x, self.y)"""
 
 class Zeton:
   def __init__(self,value):
@@ -279,20 +209,20 @@ class Zeton:
 
 try:
   Z1 = Zeton(10)
-  expected_var = "hodnota"
+  expected_var = "value"
   all_vars = dir(Z1)
   if "_Zeton__"+expected_var in all_vars:
-    print("V pořádku")
+    print("Is OK")
   elif expected_var in all_vars:
-    print(expected_var, "není skrytý atribut")
+    print(expected_var, "no hidden atribut")
   elif "_"+expected_var in all_vars:
-    print("_"+expected_var, "není skrytý atribut")
+    print("_"+expected_var, "no hidden atribut")
   else:
-    print(expected_var, "nenalezeno")
+    print(expected_var, "Error 404")
 except NameError as e:
-  print("Třída Zeton nenalezena")
+  print("Class Zeton not found")
 except TypeError as e:
-  print("Třída Zeton má příjmat jeden argument při vytváření")
+  print("Class Zeton should receive one argument while creating  ")
 
 
 
