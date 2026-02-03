@@ -23,9 +23,19 @@ elif c>a and c>b:
 else:
     print("All the numbers are same:",a)"""
 
+#lieární rovnice ax + b = 0
+a= int(input("Enter first number: "))
+b= int(input("Enter second number: "))
+if a == 0 and b == 0:
+    print("The equation has infinitely many solutions")
+elif a == 0 and b != 0:
+    print("Equation has no solutions")
+else:
+    x = -b / a
+    print("Solution is x =", x)
 
 # linearni rovnice jako funkce
-"""
+
 def linear_fce(y, z):
 
     if y == 0 and z == 0:
@@ -34,8 +44,8 @@ def linear_fce(y, z):
     if y == 0 and z != 0:
         return "equation has no solutions"
 
-    fce = -z / y
-    return fce"""
+    return -z / y
+    
 
 
 # řešení rovnice ax^2 + bx + c = 0 neboli kvadratické rovnice
@@ -199,8 +209,7 @@ car3 = Car(300,400,"Ferrari")
 
 print("Auto1: x:", car1.position[0],",y:", car1.position[0], ",hp:", car1.hp, ",brand:", car1.name)
 print("Auto2: x:", car2.position[0],",y:", car2.position[0], ",hp:", car2.hp, ",brand:", car2.name)
-print("Auto3: x:", car3.position[0],",y:", car3.position[0], ",hp:", car3.hp, ",brand:", car3.name)"""
-
+print("Auto3: x:", car3.position[0],",y:", car3.position[0], ",hp:", car3.hp, ",brand:", car3.name)
 
 
 class Zeton:
@@ -222,7 +231,7 @@ try:
 except NameError as e:
   print("Class Zeton not found")
 except TypeError as e:
-  print("Class Zeton should receive one argument while creating  ")
+  print("Class Zeton should receive one argument while creating  ")"""
 
 
 
