@@ -183,7 +183,7 @@ print(answer)"""
 
 # class/oop
 
-class Car:
+"""class Car:
   def __init__ (self, x, y, name):
     self.position = [x,y]
     self.hp = 0
@@ -201,9 +201,89 @@ for i in range(5):
   print(car3)
   car3.drive_left()
 
-print("Car at the end:", car3)
+print("Car at the end:", car3)"""
+
+"""class coin:
+  def __init__(self,value):
+    self.__value = value
+
+try:
+  Z1 = coin(10)
+  expected_var = "value"
+  all_vars = dir(Z1)
+  if "_coin__"+expected_var in all_vars:
+    print("Is OK")
+  elif expected_var in all_vars:
+    print(expected_var, "no hidden atribut")
+  elif "_"+expected_var in all_vars:
+    print("_"+expected_var, "no hidden atribut")
+  else:
+    print(expected_var, "Error 404")
+except NameError as e:
+  print("Class coin not found")
+except TypeError as e:
+  print("Class coin should receive one argument while creating  ")"""
+
+#dědičnost
+
+class animal:
+  # Every animal has a name and weight
+  def __init__(self, name, weight):
+    if weight < 0:
+      raise ValueError("Weight of an animal can be negative")
+    self.name = name
+    self.weight = weight
+
+  @property
+  def name(self):
+    return self.__name
+  @name.setter
+  def name(self, name):
+    self.__name = name.upper()
+
+  @property
+  def weight(self):
+    return self.__weight
+  @weight.setter
+  def hmotnost(self, weight):
+    self.__weight = max(0, weight)
+
+  # Každé zvíře umí zařvat
+  def sound(self):
+    print("Huááá hlasitostí")
+
+  def __str__(self):
+    return "Call me {} and I weigh {} kilograms.".format(self.name, self.weight)
+
+#_________________________________________________________________________________________________________
+class dog(animal):
+
+  def __init__(self, name, weight, loudness):
+    animal.__init__(self, name, weight)
+    self.loudness = loudness
+
+  def sound(self):
+    print(f"Bark bark with loudness {self.loudness}")
 
 
+  def __str__(self):
+    return "I'm a loud dog with loudness {} {}".format(self.loudness, animal.__str__(self))
 
+class cat(animal):
+  def __init__(self, name, weight, cuteness):
+    animal.__init__(self, name, weight)
+    self.cuteness = cuteness
 
+  def sound(self):
+    print(f"Mew mew with cuteness {self.cuteness}")
 
+  def __str__(self):
+    return "I'm a cat with {} cuteness {}".format(self.cuteness, animal.__str__(self))
+
+p1 = dog("Grok", 40, 90)
+k1 = cat("Cupcake", 3, 100)
+
+print(p1)
+p1.sound()
+print(k1)
+k1.sound()
