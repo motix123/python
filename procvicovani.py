@@ -226,7 +226,7 @@ except TypeError as e:
 
 #dědičnost
 
-class animal:
+"""class animal:
   # Every animal has a name and weight
   def __init__(self, name, weight):
     if weight < 0:
@@ -286,4 +286,66 @@ k1 = cat("Cupcake", 3, 100)
 print(p1)
 p1.sound()
 print(k1)
-k1.sound()
+k1.sound()"""
+
+
+#grafy3D a 2D
+
+import matplotlib.pyplot as plt
+import numpy as np
+
+b = int(input("Enter b: "))
+c = int(input("Enter c: "))
+
+
+x=np.linspace(-4,4,100)
+fig, ax = plt.subplots()
+ax.plot(x,(x**3+b)+c)
+plt.show()
+
+"""import matplotlib.pyplot as plt
+import numpy as np
+
+plt.style.use('_mpl-gallery')
+
+# Make data
+x = [1, 1, 2, 2]
+y = [1, 2, 1, 2]
+z = [0, 0, 0, 0]
+dx = np.ones_like(x)*0.5
+dy = np.ones_like(x)*0.5
+dz = [87, 3, 1, 4]
+
+# Plot
+fig, ax = plt.subplots(subplot_kw={"projection": "3d"})
+ax.bar3d(x, y, z, dx, dy, dz)
+
+ax.set(xticklabels=[],
+       yticklabels=[],
+       zticklabels=[])
+
+plt.show()
+#OKNO
+import tkinter as tk"""
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
